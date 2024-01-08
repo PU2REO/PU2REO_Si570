@@ -2,8 +2,8 @@
 Library for the Si570 10 MHz to 1.4 GHz I2C programmable XO/VCXO, in the Arduino environment
 
 # What sets this version apart from the others?
-This version we just calculate internal Crystal Oscillator from initial frequency after a reset:
-```cs
+This version we just calculate internal Crystal Oscillator (Si570_Data.FXtal) from initial frequency after a reset. Some versions I have seen you have to input this variable manually and precision goes downhill.
+```cpp
 void PU2REO_Si570::Reset(void)
 {
     // writes command to the Si570
@@ -18,4 +18,5 @@ void PU2REO_Si570::Reset(void)
     Si570_Data.CurrentRFreq = Si570_Data.RFreq;
 }
 ```
+
 
