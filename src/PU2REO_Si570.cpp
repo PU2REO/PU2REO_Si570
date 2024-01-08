@@ -387,7 +387,7 @@ int16_t PU2REO_Si570::Set_Frequency_Large_Change(float frequency)
 
     // Load the new frequency
     // get the current state of register 137
-    // Read 1 position, starting on REG135
+    // Read 1 position, starting on REG137
     this->Read(SI570_REG_137, buf, 1);
     reg137 = buf[0];
 
