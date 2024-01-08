@@ -52,7 +52,7 @@ typedef struct
     float     FXtal;                               // Internal fixed-frequency crystal
     float     CurrentFreq;                         // Si570 Actual operating frequency.
     float     CurrentRFreq;                        // Actual High-resolution 38-bit fractional multiplier
-} St;
+} Si570_st;
 
 class PU2REO_Si570
 {
@@ -82,5 +82,5 @@ public:
 int32_t                     frac_bits;
 uint8_t                     CmdBuffer[SI570_MAX_CMD_SIZE];
 uint8_t                     DataBuffer[SI570_MAX_BUF_SIZE];
-St                    Si570_Data;
+Si570_st                    Si570_Data;
 };
