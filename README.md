@@ -1,5 +1,7 @@
 # PU2REO_Si570
-Library for the Si570 10 MHz to 1.4 GHz I2C programmable XO/VCXO, in the Arduino environment
+Library for the Si570 10 MHz to 1.4 GHz I2C programmable XO/VCXO, in the Arduino environment.
+
+The Si570 XO/Si571 VCXO utilizes Skyworks Solutions’ advanced DSPLL® circuitry to provide a low-jitter clock at any frequency. The Si570/Si571 are user-programmable to any output frequency from 10 to 945 MHz and select frequencies to 1400 MHz with <1 ppb resolution. The device is programmed via an I2C serial interface. Unlike traditional XO/VCXOs where a different crystal is required for each output frequency, the Si57x uses one fixed-frequency crystal and a DSPLL clock synthesis IC to provide any-frequency operation. This IC-based approach allows the crystal resonator to provide exceptional frequency stability and reliability. In addition, DSPLL clock synthesis provides superior supply noise rejection, simplifying the task of generating low-jitter clocks in noisy environments typically found in communication systems.
 
 # Public Methods
 ```cpp
