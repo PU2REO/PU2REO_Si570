@@ -22,7 +22,7 @@ void      Write(uint8_t *buffer, uint8_t size);
 ```
 
 # What sets this library apart from the others?
-In this library, the frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases.
+In this library, the frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570, eliminating the need for corrections. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases. 
 ```cpp
 void PU2REO_Si570::Reset(void)
 {
