@@ -22,24 +22,24 @@ void      Write(uint8_t *buffer, uint8_t size);
 ```
 
 # What sets this library apart from the others?
-⋅⋅* The frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570, eliminating the need for corrections. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases. 
-```cpp
-void PU2REO_Si570::Reset(void)
-{
-    // writes command to the Si570
-    CmdBuffer[0] = SI570_REG_135;  // Position
-    CmdBuffer[1] = 0x01;           // Reset command
-    this->Write(CmdBuffer, 2);     // Send command string
+* The frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570, eliminating the need for corrections. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases. 
+   ```cpp
+   void PU2REO_Si570::Reset(void)
+   {
+       // writes command to the Si570
+       CmdBuffer[0] = SI570_REG_135;  // Position
+       CmdBuffer[1] = 0x01;           // Reset command
+       this->Write(CmdBuffer, 2);     // Send command string
 
-    // get registers and calculate current frequency
-    this->Get_Registers();
-    Si570_Data.FXtal = (FOUT_START_UP * Si570_Data.N1 * Si570_Data.HSDiv) / Si570_Data.RFreq; //MHz
-    Si570_Data.CurrentFreq = FOUT_START_UP;
-    Si570_Data.CurrentRFreq = Si570_Data.RFreq;
-}
-```
-⋅⋅* Possibility of reading/writing any of the Si570 internal registers at any time.
-⋅⋅* Perform small changes on the output frequency (inside de window of 3500ppm) on the fly just recalculating RFREQ register.
+       // get registers and calculate current frequency
+       this->Get_Registers();
+       Si570_Data.FXtal = (FOUT_START_UP * Si570_Data.N1 * Si570_Data.HSDiv) / Si570_Data.RFreq; //MHz
+       Si570_Data.CurrentFreq = FOUT_START_UP;
+       Si570_Data.CurrentRFreq = Si570_Data.RFreq;
+   }
+   ```
+* Possibility of reading/writing any of the Si570 internal registers at any time.
+* Perform small changes on the output frequency (inside de window of 3500ppm) on the fly just recalculating RFREQ register.
 
 # A wave of hand to:
 Gerrit Polder, PA3BYA, the one who made it first for mbed around 2010.
