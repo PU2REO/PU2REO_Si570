@@ -22,7 +22,7 @@ void      Write(uint8_t *buffer, uint8_t size);
 ```
 
 # What sets this library apart from the others?
-In this library, the frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570, eliminating the need for corrections. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases. 
+⋅⋅* The frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570, eliminating the need for corrections. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases. 
 ```cpp
 void PU2REO_Si570::Reset(void)
 {
@@ -38,7 +38,8 @@ void PU2REO_Si570::Reset(void)
     Si570_Data.CurrentRFreq = Si570_Data.RFreq;
 }
 ```
-Another point is the possibility of reading/writing any of the Si570 internal registers at any time.
+⋅⋅* Possibility of reading/writing any of the Si570 internal registers at any time.
+⋅⋅* Perform small changes on the output frequency (inside de window of 3500ppm) on the fly just recalculating RFREQ register.
 
 # A wave of hand to:
 Gerrit Polder, PA3BYA, the one who made it first for mbed around 2010.
