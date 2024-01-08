@@ -1,8 +1,26 @@
 # PU2REO_Si570
 Library for the Si570 10 MHz to 1.4 GHz I2C programmable XO/VCXO, in the Arduino environment
 
-# What sets this version apart from the others?
-This version we just calculate internal Crystal Oscillator (Si570_Data.FXtal) from initial frequency after a reset. Some versions I have seen you have to input this variable manually and precision goes downhill.
+# Public Methods
+```cpp
+PU2REO_Si570(void);
+void      Init(void);
+void      Reset(void);
+float     Get_Frequency(void);
+float     Get_RFreq(void);
+uint16_t  Get_N1(void);
+int16_t   Get_HSdiv(void);
+void      Get_Registers(void);
+int16_t   Set_Frequency(float currentFrequency);
+int16_t   Set_Frequency_Small_Change(float currentFrequency);
+int16_t   Set_Frequency_Large_Change(float currentFrequency);
+uint8_t   SetBits(uint8_t original, uint8_t reset_mask, uint8_t new_val);
+void      Read(uint8_t init_reg, uint8_t *buffer, uint8_t size);
+void      Write(uint8_t *buffer, uint8_t size);
+```
+
+# What sets this library apart from the others?
+In this library, the frequency of the internal crystal oscillator (Si570_Data.FXtal) is calculated based on the initial frequency output after an internal reset of the Si570. In some versions I have seen, you have to enter this variable manually and therefore, the accuracy of the output frequency decreases.
 ```cpp
 void PU2REO_Si570::Reset(void)
 {
@@ -18,5 +36,7 @@ void PU2REO_Si570::Reset(void)
     Si570_Data.CurrentRFreq = Si570_Data.RFreq;
 }
 ```
+Another point is the possibility of reading/writing any of the Si570 internal registers at any time.
 
-
+# A wave of hand to:
+Gerrit Polder, PA3BYA, the one who made it first for mbed around 2010.
