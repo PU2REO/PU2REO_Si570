@@ -41,5 +41,8 @@ void      Write(uint8_t *buffer, uint8_t size);
 * Possibility of reading/writing any of the Si570 internal registers at any time.
 * Perform small changes on the output frequency (inside de window of 3500ppm) on the fly just recalculating RFREQ register.
 
+# Very important notice:
+Si570 runs on 3.3v only. It will be necessary a voltage level converter to run it powered bry Arduino 5v bus. You can follow the schematic bellow, like I did and it runs perfectly.
+
 # A wave of hand to:
 Gerrit Polder, PA3BYA, the one who made it first for mbed around 2010.
