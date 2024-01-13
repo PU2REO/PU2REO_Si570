@@ -44,6 +44,7 @@ void      Write(uint8_t *buffer, uint8_t size);
 # Very important notice:
 Si570 runs on 3.3V only. It will be necessary a voltage level converter to run it powered by Arduino 5V bus. A cheap and useful one is displayed bellow for reference:
 ![Si570 Voltage Level Converter](schematics/Si570Converter.png "Si570 Voltage Level Converter")
+![Si570 Voltage Level Converter on a Breadboard](schematics/Converter.jpeg "Si570 Voltage Level Converter on a Breadboard")
 
 # A wave of hand to:
 Gerrit Polder, PA3BYA, the one who made it first for mbed around 2010.
